@@ -65,16 +65,29 @@ namespace Insurance1
                     {
                         //Deny Quote
                         //"Policy has more than 3 claims" 
+                        this.Hide();
+                        var form6 = new Form6("Policy has more than 3 claims");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
+
                     }
                     else if (Drivers.numClaims.Contains(2))
                     {
                         //Deny Quote and find out position of driver 
                         //Find out which drivers denied quote
+                        this.Hide();
+                        var form6 = new Form6(driverName+"has more than 2 claims");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
                     }
                     else if (Drivers.numClaims.Contains(3))
                     {
                         //Deny Quote and find out position of driver 
                         //Find out which drivers denied quote
+                        this.Hide();
+                        var form6 = new Form6("Driver has more than 3 claims");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
                     }
                    else if (Drivers.numClaims.Contains(4))
                     {

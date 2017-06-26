@@ -90,14 +90,26 @@ namespace Insurance1
                     if (val == -1)
                     {
                         //Unsuccessful Too Young
+                        this.Hide();
+                        var form6 = new Form6("Too Young");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
                     }
                     if (val == -2)
                     {
                         //Unsuccessful Too Old 
+                        this.Hide();
+                        var form6 = new Form6("Too Old");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
                     }
                     if (val == -3)
                     {
                         //Unsuccessful Policy Start Date
+                        this.Hide();
+                        var form6 = new Form6("Start Date");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
                     }
 
                     this.Hide();
@@ -111,17 +123,31 @@ namespace Insurance1
                     if (Drivers.claim.Count >= 3)
                     {
                         //Deny Quote
-                        //"Policy has more than 3 claims" 
+                        //"Policy has more than 3 claims"
+                        this.Hide();
+                        var form6 = new Form6("Policy has more than 3 claims");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
                     }
                     else if (Drivers.numClaims.Contains(2))
                     {
                         //Deny Quote and find out position of driver 
                         //Find out which drivers denied quote
+                        this.Hide();
+                        var form6 = new Form6(name+" has more than 2 claims");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
+
+
                     }
                     else if (Drivers.numClaims.Contains(3))
                     {
                         //Deny Quote and find out position of driver 
                         //Find out which drivers denied quote
+                        this.Hide();
+                        var form6 = new Form6(name + " has more than 3 claims");
+                        form6.Closed += (s, args) => this.Close();
+                        form6.Show();
                     }
                     else if (Drivers.numClaims.Contains(4))
                     {
